@@ -19,6 +19,7 @@ export default function Header() {
   // @endif
   const links = [
     { to: "/", label: "Home" },
+    { to: "/docs", label: "Docs" },
     // @if auth
     { to: "/dashboard", label: "Dashboard" },
     // @endif

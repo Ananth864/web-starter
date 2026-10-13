@@ -1,6 +1,7 @@
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
+import { fumadocsMdx } from "fumadocs-mdx/vite";
 import { defineConfig, lazyPlugins } from "vite-plus";
 
 // Alchemy (`alchemy dev` / `alchemy deploy`) appends its own Cloudflare plugin.
@@ -17,5 +18,10 @@ export default defineConfig({
       external: [/^cloudflare:/],
     },
   },
-  plugins: lazyPlugins(() => [tailwindcss(), tanstackStart(), viteReact()]),
+  plugins: lazyPlugins(() => [
+    fumadocsMdx({ index: false }),
+    tailwindcss(),
+    tanstackStart(),
+    viteReact(),
+  ]),
 });

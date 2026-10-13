@@ -27,12 +27,16 @@ Before init, the template runs as the default pick. Code for other options is co
 ## Layout
 
 - `apps/web`: TanStack Start app. `alchemy.run.ts` is the Cloudflare stack.
+
 <!-- @if convex -->
+
 - `packages/backend`: Convex functions, schema, and auth config
   <!-- @endif -->
   <!-- @if drizzle -->
 - `packages/api`: Effect-native API Worker, Drizzle schema, PlanetScale and Hyperdrive resources
+
 <!-- @endif -->
+
 - `packages/ui`: shadcn/ui primitives and Tailwind tokens
 - `packages/env`: client env validation
 
@@ -88,6 +92,7 @@ In the WorkOS dashboard:
 - Redirect URI: `http://localhost:3001/api/auth/callback`
 - Sign-in endpoint: `http://localhost:3001/api/auth/sign-in`
 - CORS origin: `http://localhost:3001`
+
 <!-- @if convex -->
 
 Set the client ID in Convex for JWT validation:
@@ -109,7 +114,9 @@ In the Clerk dashboard:
 
 - Paths: sign-in `/auth/sign-in`, sign-up `/auth/sign-up`
 - Sessions > Customize session token: `{ "email": "{{user.primary_email_address}}", "name": "{{user.full_name}}" }`. The app reads the viewer from these claims.
+
 <!-- @if convex -->
+
 - Enable the Convex integration, then set its issuer in Convex:
 
 ```bash
@@ -135,15 +142,27 @@ bun run dev
 
 Open `http://localhost:3001`.
 
+## Documentation
+
+`/docs` uses Fumadocs with a sidebar, page outline, syntax highlighting, and full-text search at `/api/search`.
+
+Add Markdown or MDX pages in `apps/web/content/docs`. Each page needs a frontmatter `title`; `index.mdx` maps to `/docs`, and other filenames become nested docs URLs. Set navigation order in `meta.json`. Shared MDX components live in `apps/web/src/components/mdx.tsx`.
+
+The Fumadocs Vite plugin compiles content during dev and build; no separate docs generation command is needed.
+
 ## Scripts
 
 - `bun run dev`: run every dev server
 - `bun run dev:web`: run only the web app (`alchemy dev`)
+
 <!-- @if convex -->
+
 - `bun run dev:server`: run only Convex
 - `bun run dev:setup`: configure Convex
 - `bun run codegen`: regenerate Convex files
+
 <!-- @endif -->
+
 - `bun run check`: format, lint, and type check (`vp check`)
 - `bun run fix`: `check` with fixes applied
 - `bun run build`: production build

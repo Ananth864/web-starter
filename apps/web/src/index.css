@@ -1,1 +1,52 @@
 @import "@web-starter/ui/globals.css";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+
+/* Fumadocs uses its own tokens, leaving the app's shadcn theme intact. */
+.dark {
+  --color-fd-background: #000;
+  --color-fd-foreground: #fff;
+  --color-fd-primary: #fff;
+}
+
+body:has(#nd-docs-layout) {
+  background: #000;
+}
+
+#nd-docs-layout {
+  --fd-banner-height: 3.5rem;
+  --fd-layout-width: 80rem;
+  --fd-docs-height: calc(100svh - 3.5rem);
+  min-height: calc(100svh - 3.5rem);
+}
+
+.dark #nd-sidebar {
+  background: #000;
+}
+
+#nd-docs-layout #nd-page {
+  padding-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  #nd-docs-layout {
+    --fd-sidebar-width: 15rem;
+  }
+}
+
+#nd-sidebar a,
+#nd-sidebar button,
+#nd-page .shiki,
+#nd-page > div:last-child a {
+  border-radius: 0;
+}
+
+#nd-sidebar a[data-active="true"] {
+  background: transparent;
+  border-left: 2px solid #fff;
+}
+
+#nd-page > div:last-child a {
+  border-width: 1px 0 0;
+  padding-inline: 0;
+}

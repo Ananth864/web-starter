@@ -1,0 +1,39 @@
+---
+title: Writing docs
+description: Markdown content with Fumadocs navigation and components.
+---
+
+## Add a page
+
+Create `apps/web/content/docs/my-guide.mdx` with a `title` in its frontmatter. It becomes available at `/docs/my-guide`.
+
+The `index.mdx` page is served at `/docs`. Folders create nested URLs.
+
+## Order navigation
+
+Set page order in `meta.json` using filenames without extensions:
+
+```json
+{
+  "title": "Documentation",
+  "pages": ["index", "configuration", "writing-docs", "my-guide"]
+}
+```
+
+## Use MDX components
+
+The default Fumadocs components are registered in `apps/web/src/components/mdx.tsx`. Code blocks include syntax highlighting and a copy button. Headings populate the page outline.
+
+Import additional components directly in MDX:
+
+```mdx
+import { Callout } from "fumadocs-ui/components/callout";
+
+<Callout title="Tip">Keep each page focused on one task.</Callout>
+```
+
+## Search
+
+Use the sidebar search or press **⌘ K** / **Ctrl K**. The `/api/search` endpoint indexes the same content used by the docs routes.
+
+See the [Fumadocs documentation](https://www.fumadocs.dev/docs) for more components and content options.

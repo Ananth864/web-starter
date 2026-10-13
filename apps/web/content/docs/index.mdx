@@ -1,0 +1,41 @@
+---
+title: Getting started
+description: Build with TanStack Start. Deploy to Cloudflare Workers.
+---
+
+## Run locally
+
+Install dependencies and choose your starter options from the repository root:
+
+```bash
+bun install
+bun run init
+```
+
+Follow the README to configure your environment and selected services, then start the app:
+
+```bash
+bun run dev
+```
+
+Open [localhost:3001](http://localhost:3001). Documentation lives at `/docs`.
+
+## Write documentation
+
+Add Markdown or MDX pages to `apps/web/content/docs`. Fumadocs builds navigation, search, and the table of contents from your content.
+
+```mdx
+---
+title: My guide
+description: A short introduction.
+---
+
+## First step
+
+Write your guide here.
+```
+
+## Next steps
+
+- [Configuration](/docs/configuration): project structure and local settings.
+- [Writing docs](/docs/writing-docs): pages, navigation, and MDX components.
