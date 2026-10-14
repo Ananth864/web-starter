@@ -7,7 +7,9 @@ Bun monorepo:
 - TanStack Start in `apps/web`, deployed to Cloudflare Workers through Alchemy v2 (`apps/web/alchemy.run.ts`)
 - Tailwind CSS v4 and shadcn/ui primitives in `packages/ui`
 - Vite+ (`vp`) for dev, build, lint, format, type checks, and task running. Lint and format config lives in the root `vite.config.ts`
+
 <!-- @if convex -->
+
 - Convex backend in `packages/backend/convex`
   <!-- @endif -->
   <!-- @if drizzle -->
@@ -21,6 +23,7 @@ Bun monorepo:
   <!-- @endif -->
   <!-- @if ai -->
 - TanStack AI chat route in `apps/web/src/routes/api/ai/chat.tsx`
+
 <!-- @endif -->
 
 <!-- @if template -->
@@ -40,7 +43,9 @@ Run `bun run init` to pick options (see `README.md`). Until then the repo holds 
 - Keep deployment on Cloudflare through Alchemy.
 - Worker bindings are declared in `apps/web/alchemy.run.ts`. Read them with `import { env } from "cloudflare:workers"` inside request handlers, not at module scope.
 - Do not put secrets in public `VITE_` variables.
+
 <!-- @if convex -->
+
 - Keep Convex functions in `packages/backend/convex` and import APIs from `@web-starter/backend/convex/_generated/api`.
 - Run `bun run codegen` after adding or renaming Convex functions.
   <!-- @endif -->

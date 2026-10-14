@@ -7,11 +7,11 @@
     "./web": "./src/web.ts"
   },
   "dependencies": {
-    "@t3-oss/env-core": "^0.13.1",
+    "@t3-oss/env-core": "^0.13.11",
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@types/node": "^22.13.14",
+    "@types/node": "^26.6.5",
     "@web-starter/config": "workspace:*",
     "typescript": "catalog:"
   }
