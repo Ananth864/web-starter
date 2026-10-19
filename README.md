@@ -2,6 +2,22 @@
 
 Bun monorepo: TanStack Start, Tailwind, shadcn/ui, and Vite+, deployed to Cloudflare Workers through Alchemy v2.
 
+This fork is the shared starter kit for new websites. Upstream: [adityamiskin/web-starter](https://github.com/adityamiskin/web-starter).
+
+Use Bun 1.3.14 or newer and Node 22.18+, 24.11+, or 26+. Run `bun install --frozen-lockfile` to use the verified dependency versions. On a fresh checkout, run `bun run build` before `bun run check` to generate the route and documentation types.
+
+## Dependency verification
+
+Direct dependencies were checked against the npm registry on 2026-10-19. Packages use the current stable releases, with two deliberate exceptions: Alchemy stays on its existing v2 beta and Drizzle ORM/Kit stay paired at `1.0.0-rc.5-ab785fc` because the API integration targets these APIs. The Vite alias stays on the same version as Vite+.
+
+Production builds and format, lint, and type checks passed for the uninitialized template and these initialized options:
+
+- `core`
+- `convex clerk ai`
+- `drizzle workos ai`
+
+These checks cover compilation and static compatibility. Live auth, AI requests, Convex code generation against a deployment, database provisioning, and Cloudflare deployment require project credentials and were not tested.
+
 <!-- @if template -->
 
 ## Pick your stack
